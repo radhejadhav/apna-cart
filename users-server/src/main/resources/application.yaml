@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: users-service
+
+  config:
+    import: optional:configserver:http://localhost:8989
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/apna-cart?useSSL=false
+    schema: public
+    username: postgres
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${eureka.url}
+    fetchRegistry: true
+    healthcheck:
+      enabled: true
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 10
+
+management:
+  endpoints:
+    web:
+#      base-path: /details
+      exposure:
+        include: ["health", "info", "metrics", "prometheus", "bindings", "beans", "env", "loggers", "streamsbindings", "mappings"]

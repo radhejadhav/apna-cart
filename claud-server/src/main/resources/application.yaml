@@ -1,0 +1,12 @@
+server:
+  port: 8989
+spring:
+  application:
+    name: claud-server
+  profiles:
+    active: native
+  claud:
+    config:
+      server:
+        native:
+          search-locations: file:///C:/utils/spring-boot-tutorial/claud-server/src/main/resources
