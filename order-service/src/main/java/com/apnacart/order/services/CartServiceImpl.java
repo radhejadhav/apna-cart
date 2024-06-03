@@ -169,7 +169,7 @@ public class CartServiceImpl implements CartService{
         }
     }
 
-    @EventListener(ApplicationReadyEvent.class)
+//    @EventListener(ApplicationReadyEvent.class)
     public void startup() throws Exception {
         try {
             ResponseEntity<List<LinkedHashMap<String, Object>>> response = userClient.getAllUser();

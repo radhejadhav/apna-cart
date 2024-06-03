@@ -6,3 +6,5 @@ spring:
 
 eureka:
   url: http://localhost:8761/eureka
+
+key-set-url: http://localhost:8282/realms/master/protocol/openid-connect/certs

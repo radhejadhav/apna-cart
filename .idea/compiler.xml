@@ -8,13 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="claud-server" />
-        <module name="products-service" />
+        <module name="product-service" />
         <module name="payment-service" />
-        <module name="auth" />
-        <module name="users-server" />
         <module name="order-service" />
         <module name="eureka-server" />
-        <module name="apna" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +21,7 @@
       <module name="eureka-server" target="17" />
       <module name="order-service" target="17" />
       <module name="payment-service" target="17" />
+      <module name="product-service" target="17" />
       <module name="products-service" target="17" />
       <module name="users-server" target="17" />
     </bytecodeTargetLevel>
@@ -36,6 +34,7 @@
       <module name="eureka-server" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />
+      <module name="product-service" options="-parameters" />
       <module name="products-service" options="-parameters" />
       <module name="users-server" options="-parameters" />
     </option>
