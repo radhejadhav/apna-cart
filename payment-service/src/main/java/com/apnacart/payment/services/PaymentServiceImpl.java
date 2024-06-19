@@ -1,6 +1,7 @@
 package com.apnacart.payment.services;
 
 import com.apnacart.payment.dto.PaymentDto;
+import com.apnacart.payment.entities.Transaction;
 import com.apnacart.payment.entities.TransactionDetails;
 import com.apnacart.payment.entities.WalletImpl;
 import com.apnacart.payment.repositories.TransactionDao;
@@ -65,6 +66,16 @@ public class PaymentServiceImpl implements PaymentService{
     }
 
     @Override
+    public Transaction credit(Long userId, double amount) {
+        return null;
+    }
+
+    @Override
+    public Transaction debit(Long userId, double amount) {
+        return null;
+    }
+
+    @Override
     public double checkBalance(Long userId) {
         try {
             WalletImpl userWallet = walletDao.findWalletImplByUserId(userId);
@@ -74,10 +85,5 @@ public class PaymentServiceImpl implements PaymentService{
             logger.error("Exception while checking balance for user: "+ userId);
             throw new RuntimeException("Exception "+ e.getMessage());
         }
-    }
-
-    @EventListener(ApplicationReadyEvent.class)
-    public void createWalletForUsers(){
-
     }
 }

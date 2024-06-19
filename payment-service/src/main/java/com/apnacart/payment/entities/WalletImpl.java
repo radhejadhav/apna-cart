@@ -13,6 +13,7 @@ public class WalletImpl implements Wallet{
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_id")
     @SequenceGenerator(name = "seq_id", sequenceName = "ID_GENERATOR")
     private Long id;
+    @Column(name = "user_id", unique = true, nullable = false, updatable = false)
     private Long userId;
     @Column(name = "amount", columnDefinition = "bigint")
     private Double amount;

@@ -20,7 +20,7 @@ public class KeyClockRoleConverter implements Converter<Jwt, Collection<GrantedA
             return new ArrayList<>();
         }
 
-        System.out.println(realmAccess.get("roles"));
+        System.out.println(jwt.getClaims());
         Collection<GrantedAuthority> returnValue = ((List<String>) realmAccess.get("roles"))
                 .stream().map(roleName -> "ROLE_" + roleName)
                 .map(SimpleGrantedAuthority::new)

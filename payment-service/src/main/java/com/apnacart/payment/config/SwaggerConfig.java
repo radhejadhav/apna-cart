@@ -13,24 +13,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@OpenAPIDefinition(servers = { @Server(url = "https://localhost:8282/")},
+@OpenAPIDefinition(
+//        servers = { @Server(url = "https://localhost:8282/")},
         info = @io.swagger.v3.oas.annotations.info.Info(
                 title = "Payment Service APIs", description = "This lists all the Order Service API Calls. The Calls are OAuth2 secured, "
                 + "so please use your client ID and Secret to test them out.",
                 version = "v1.0"))
 @SecurityScheme(
-        name = "security_auth",
+        name = "Authorization",
         type = SecuritySchemeType.OAUTH2,
+        bearerFormat = "JWT",
+        scheme = "bearer",
         flows = @OAuthFlows(authorizationCode = @OAuthFlow(
                 authorizationUrl = "http://localhost:8282/realms/master/protocol/openid-connect/auth",
                 tokenUrl = "http://localhost:8282/realms/master/protocol/openid-connect/token",
                 scopes = {
-                        @OAuthScope(name = "openid", description = "openid scope")
+                        @OAuthScope(name = "openid", description = "openid")
                 }
-        ))
-
-
-)
+        )))
 public class SwaggerConfig {
 
 
